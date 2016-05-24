@@ -11,6 +11,8 @@
 |
 */
 
+Route::resource('gosi', 'GosiController');
+
 Route::get('/', function () {
     return view('welcome');
 });
