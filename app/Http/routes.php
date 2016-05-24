@@ -12,6 +12,7 @@
 */
 
 Route::resource('gosi', 'GosiController');
+Route::resource('engagmentSummaryBeanList', 'EngagmentSummaryBeanListController');
 
 Route::get('/', function () {
     return view('welcome');
