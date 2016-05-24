@@ -1,4 +1,17 @@
-<!--NIN-->	
+<!--NIN-->
+<div class="container">
+    <div class="row col-sm-6">
+        <h1>Create Engagment Summary Bean List</h1>
+
+        @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+        @endif
 <div class="form-group is-empty">
     <label class="control-label">NIN</label>
     <select name="gosi_id">
@@ -89,4 +102,6 @@
     <label class="control-label">wageStatus	</label>
     <input type="text" name="wageStatus" class="form-control width-lg"  value="">
     <span class="material-input"></span>
+</div>
+</div>
 </div>
