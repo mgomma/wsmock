@@ -20,20 +20,19 @@ class GosiController extends Controller
     }
     
     public function store(GosiRequest $request) {
-      $arr = ['NIN' => $request->input('NIN'),
-              'contributorFirstName' => $request->input('contributorFirstName'),
-              'contributorThirdName' => $request->input('contributorThirdName'),
-              'contributorLastName' => $request->input('contributorLastName'),
-              'contributorSecondName' => $request->input('contributorSecondName'),
-              'nationalityCode' => $request->input('nationalityCode'),
-              'newNINumber' => $request->input('newNINumber'),
-              'sex' => $request->input('sex'),
-              'socialInsuranceNumber' => $request->input('socialInsuranceNumber'),
-              'specifiedDate' => $request->input('specifiedDate'),
-              ];
-      
-      Gosi::create($arr);
-      return view('Gosi.add');
+//      $arr = ['NIN' => $request->input('NIN'),
+//              'contributorFirstName' => $request->input('contributorFirstName'),
+//              'contributorThirdName' => $request->input('contributorThirdName'),
+//              'contributorLastName' => $request->input('contributorLastName'),
+//              'contributorSecondName' => $request->input('contributorSecondName'),
+//              'nationalityCode' => $request->input('nationalityCode'),
+//              'newNINumber' => $request->input('newNINumber'),
+//              'sex' => $request->input('sex'),
+//              'socialInsuranceNumber' => $request->input('socialInsuranceNumber'),
+//              'specifiedDate' => $request->input('specifiedDate'),
+//              ];
+      Gosi::create($request->all());
+      return redirect('/gosi/create');
     }
     
  

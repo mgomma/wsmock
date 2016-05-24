@@ -19,9 +19,8 @@ class EngagmentSummaryBeanListController extends Controller
     }
     
     public function store(EngagmentSummaryBeanListRequest $request ) {
-      $gosi = Gosi::lists('NIN', 'NIN');
       EngagmentSummaryBeanList::create($request->all());
-      return view('EngagmentSummaryBeanList.add', compact('gosi'));
+      return redirect('/engagmentSummaryBeanList/create');
     }
 
   /**

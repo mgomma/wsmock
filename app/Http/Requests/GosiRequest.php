@@ -24,7 +24,7 @@ class GosiRequest extends Request
     public function rules()
     {
         return [
-            'NIN' => 'required|integer',
+            'NIN' => 'required|integer|unique:gosi,NIN',
             'contributorFirstName' => 'required',
             'contributorLastName' => 'required',
             'contributorSecondName' => 'required',
