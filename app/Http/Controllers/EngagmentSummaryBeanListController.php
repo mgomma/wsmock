@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Http\Models\EngagmentSummaryBeanList;
+use App\Http\Requests\EngagmentSummaryBeanListRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Models\Gosi;
@@ -17,7 +18,7 @@ class EngagmentSummaryBeanListController extends Controller
       return view('EngagmentSummaryBeanList.add', compact('gosi'));
     }
     
-    public function store(Request $request ) {
+    public function store(EngagmentSummaryBeanListRequest $request ) {
       $gosi = Gosi::lists('NIN', 'NIN');
       EngagmentSummaryBeanList::create($request->all());
       return view('EngagmentSummaryBeanList.add', compact('gosi'));

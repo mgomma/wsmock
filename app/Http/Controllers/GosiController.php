@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\GosiRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Models\Gosi;
@@ -18,7 +19,7 @@ class GosiController extends Controller
       return view('Gosi.add');
     }
     
-    public function store(Request $request ) {
+    public function store(GosiRequest $request) {
       $arr = ['NIN' => $request->input('NIN'),
               'contributorFirstName' => $request->input('contributorFirstName'),
               'contributorThirdName' => $request->input('contributorThirdName'),
