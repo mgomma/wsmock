@@ -5,13 +5,22 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Models\Gosi;
 use View;
+use Symfony\Component\HttpFoundation\Response;
 
 class GosiController extends Controller
 {
 
+  public function __construct() {
+    //send the wsdl 
+    if(isset($_GET['wsdl'])){
+      $this->soap('Gosi.wsdl');
+    }
+  }
+  
+  
   public function index() {
     dd('test');
-    }
+  }
     
     public function create() {
       return view('Gosi.add');
@@ -43,13 +52,10 @@ class GosiController extends Controller
      */
     public function show($id)
     {
-      
       $item = Gosi::where('NIN', $id)->first();
-      $data = View::make('Gosi.xml', $item);
-      dd($data);
-
+      $this->soap('Gosi.xml', $item);
     }
-
+ 
     /**
      * Show the form for editing the specified resource.
      *
@@ -82,6 +88,21 @@ class GosiController extends Controller
     public function destroy($id)
     {
         //
+    }
+    
+    /**
+     * send xml response to simulate soap response
+     * @param type $param
+     */
+    public function soap($view_name, $item = []) {
+      $content = View::make($view_name, $item);
+         
+      $response = new Response();
+      $response->headers->set("Content-Type","text/xml; charset=utf-8");
+      
+      $response->setContent($content);
+      $response->send();
+      exit;
     }
 }
 

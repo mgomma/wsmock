@@ -11,7 +11,6 @@
             <a:contributorThirdName>{{$contributorThirdName}}</a:contributorThirdName>
             <a:engagmentSummaryBeanList>
                 
-                {{@foreach $SimplifiedEngagmentSummaryBeanList as $SimplifiedEngagmentSummaryBeanitem}}
                <a:SimplifiedEngagmentSummaryBeanList>
                   <a:engagementStatus>6</a:engagementStatus>
                   <a:establishmentNameArb>2YHYsdi5INi02LHZg9ipINin2YTZhdi02LHZiNi52KfYqiDYp9mE2KjYqtix2YjZhNmK2Kkg2KfZhNmF2LXYsdmK2Kk=</a:establishmentNameArb>
@@ -25,7 +24,6 @@
                   <a:wage>3000</a:wage>
                   <a:wageStatus>1001</a:wageStatus>
                </a:SimplifiedEngagmentSummaryBeanList>
-                {{@endforeach}}
                
             </a:engagmentSummaryBeanList>
             <a:nationalityCode>{{$nationalityCode}}</a:nationalityCode>
