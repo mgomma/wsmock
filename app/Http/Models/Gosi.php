@@ -7,5 +7,4 @@ class Gosi extends Model
 {
     protected $table = 'gosi';
     public $timestamps = false;
-
 }

@@ -5,12 +5,17 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Models\Gosi;
 use View;
+use Log;
+use DB;
 use Symfony\Component\HttpFoundation\Response;
 
 class GosiController extends Controller
 {
 
   public function __construct() {
+          
+    Log::info('fff  srewrew');
+
     //send the wsdl 
     if(isset($_GET['wsdl'])){
       $this->soap('Gosi.wsdl');
@@ -52,8 +57,23 @@ class GosiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    {
+    { Log::info('fff  srewrew');
       $item = Gosi::where('NIN', $id)->first();
+
+      $item = ['NIN' => $id,
+              'contributorFirstName' => 'test 123',
+              'contributorThirdName' => 'test 123',
+              'contributorLastName' => 'test 123',
+              'contributorSecondName' => 'test 123',
+              'nationalityCode' => 'test 123',
+              'newNINumber' => 'test 123',
+              'sex' => 1,
+              'socialInsuranceNumber' => 'test 123',
+              'specifiedDate' => 'test 123',
+              ];
+      if(!$item){
+        return 'Not found NIN';
+      }
       $this->soap('Gosi.xml', $item);
     }
  
