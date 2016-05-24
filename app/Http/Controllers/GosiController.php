@@ -10,7 +10,8 @@ class GosiController extends Controller
 {
 
   public function index() {
-    dd('test');
+    $gosi = Gosi::all();
+    return view('Gosi.index', compact('gosi'));
     }
     
     public function create() {
@@ -24,10 +25,10 @@ class GosiController extends Controller
               'contributorLastName' => $request->input('contributorLastName'),
               'contributorSecondName' => $request->input('contributorSecondName'),
               'nationalityCode' => $request->input('nationalityCode'),
-              'newNINumber' => $request->input('sex'),
+              'newNINumber' => $request->input('newNINumber'),
+              'sex' => $request->input('sex'),
               'socialInsuranceNumber' => $request->input('socialInsuranceNumber'),
               'specifiedDate' => $request->input('specifiedDate'),
-//              'engagmentSummaryBeanList' => $request->input('engagmentSummaryBeanList')
               ];
       
       Gosi::create($arr);

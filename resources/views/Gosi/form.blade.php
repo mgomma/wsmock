@@ -8,15 +8,14 @@
 <!--contributorFirstName-->	
 <div class="form-group is-empty">
     <label class="control-label">contributorFirstName	</label>
-    <input type="text" name="contributorFirstName	" class="form-control width-lg"  
-           value="">
+    <input type="text" name="contributorFirstName" class="form-control width-lg" value="">
     <span class="material-input"></span>
 </div>
 
 <!--contributorThirdName-->	
 <div class="form-group is-empty">
     <label class="control-label">contributorThirdName	</label>
-    <input type="text" name="contributorThirdName	" class="form-control width-lg"  
+    <input type="text" name="contributorThirdName" class="form-control width-lg"
            value="">
     <span class="material-input"></span>
 </div>
@@ -53,16 +52,19 @@
     <span class="material-input"></span>
 </div>
 
-<!--sex-->	
+<!--sex-->
 <div class="form-group is-empty">
     <label class="control-label">sex	</label>
-    <input type="text" name="sex" class="form-control width-lg"  value="">
+    <select name="sex">
+        <option value="0">Male</option>
+        <option value="1">Female</option>
+    </select>
     <span class="material-input"></span>
 </div>
 
 <!--socialInsuranceNumber-->	
 <div class="form-group is-empty">
-    <label class="control-label">sex	</label>
+    <label class="control-label">socialInsuranceNumber	</label>
     <input type="text" name="socialInsuranceNumber" class="form-control width-lg"  value="">
     <span class="material-input"></span>
 </div>
@@ -71,12 +73,5 @@
 <div class="form-group is-empty">
     <label class="control-label">specifiedDate	</label>
     <input type="text" name="specifiedDate" class="form-control width-lg"  value="">
-    <span class="material-input"></span>
-</div>
-
-<!--	engagmentSummaryBeanList-->	
-<div class="form-group is-empty">
-    <label class="control-label">engagmentSummaryBeanList	</label>
-    <input type="text" name="engagmentSummaryBeanList" class="form-control width-lg"  value="">
     <span class="material-input"></span>
 </div>
