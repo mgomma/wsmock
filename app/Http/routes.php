@@ -22,6 +22,7 @@ Route::resource('engagmentSummaryBeanList', 'EngagmentSummaryBeanListController'
 
 Route::resource('contributor','ContributorController');
 Route::post('contributor','ContributorController@index');
+Route::post('app/services/contributorservice','ContributorController@testme');
 
 Route::get('testSoapClient','ContributorController@testSoapClient');
 

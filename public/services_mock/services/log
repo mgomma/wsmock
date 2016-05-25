@@ -1,0 +1,50 @@
+stdClass::__set_state(array(
+   'NIN' => 1000051700,
+   'contributorFirstName' => 'test',
+   'contributorLastName' => 'test',
+   'contributorSecondName' => 'test',
+   'contributorThirdName' => 'test',
+   'nationalityCode' => '0',
+   'newNINumber' => '23',
+   'sex' => '1',
+   'socialInsuranceNumber' => '23',
+   'specifiedDate' => '2010-01-01 00:00:00',
+   'engagmentSummaryBeanList' => 
+  stdClass::__set_state(array(
+     'SimplifiedEngagmentSummaryBeanList' => 
+    array (
+      0 => 
+      stdClass::__set_state(array(
+         'id' => 0,
+         'gosi_id' => '1000051700',
+         'engagementStatus' => '234',
+         'establishmentNameArb' => 'sdfsdf',
+         'joiningDate' => '2010-01-01',
+         'joiningDateEntFmt' => '2010-01-01',
+         'leavingDate' => '2010-01-01',
+         'leavingDateEntFmt' => '2010-01-01',
+         'molEstId' => '24234',
+         'molEstOfficeId' => '234234',
+         'registrationNumber' => '2423',
+         'wage' => '43',
+         'wageStatus' => '324',
+      )),
+      1 => 
+      stdClass::__set_state(array(
+         'id' => 1,
+         'gosi_id' => '1000051700',
+         'engagementStatus' => '234',
+         'establishmentNameArb' => 'sdfsdf',
+         'joiningDate' => '2010-01-01',
+         'joiningDateEntFmt' => '2010-01-01',
+         'leavingDate' => '2010-01-01',
+         'leavingDateEntFmt' => '2010-01-01',
+         'molEstId' => '24234',
+         'molEstOfficeId' => '234234',
+         'registrationNumber' => '2423',
+         'wage' => '43',
+         'wageStatus' => '324',
+      )),
+    ),
+  )),
+))
