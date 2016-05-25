@@ -10,10 +10,20 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+Route::get('/', function () {
+    return view('welcome');
+});
+
 
 Route::resource('gosi', 'GosiController');
 Route::resource('engagmentSummaryBeanList', 'EngagmentSummaryBeanListController');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::resource('contributor','ContributorController');
+Route::post('contributor','ContributorController@index');
+
+Route::get('testSoapClient','ContributorController@testSoapClient');
+
+
+
