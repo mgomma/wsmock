@@ -16,7 +16,7 @@ class ContributorService
      * @WebMethod
      *@return  wrapper[] $contributor @className=App\Services\Contributor
      */
-    public function listContributors() {
+    public function GetContributorSummary() {
 
         $contributors=[];
 
@@ -53,4 +53,4 @@ class Contributor{
     public $id;
 
 
-}   
+}

@@ -40,7 +40,7 @@ class ContributorController extends Controller
     public function testSoapClient(){
 
         $service = new ContributorService();
-        $result = $service->listContributors();
+        $result = $service->GetContributorSummary();
 
 
 
