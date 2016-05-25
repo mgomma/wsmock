@@ -7,7 +7,10 @@
     "require": {
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
-        "laravelcollective/html": "^5.2"
+        "laravelcollective/html": "^5.2",
+        "piotrooo/wsdl-creator": "1.*",
+        "besimple/soap": "0.2.*@dev"
+
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
