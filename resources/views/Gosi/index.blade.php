@@ -1,4 +1,5 @@
 @include('layout')
+<a href="/gosi/create" target="_blank" class="btn btn-block">Add GOSI</a>
 <a href="/engagmentSummaryBeanList/create" target="_blank" class="btn btn-block">Add Engagment Summary Bean List</a>
 <table class="table table-striped">
     <caption>GOSI</caption>
@@ -13,6 +14,7 @@
         <th>sex</th>
         <th>socialInsuranceNumber</th>
         <th>specifiedDate</th>
+        <th>Actions</th>
     </thead>
     <tbody>
         @foreach($gosi as $nin)
@@ -27,6 +29,7 @@
             <td>{{ $nin->sex }}</td>
             <td>{{ $nin->socialInsuranceNumber }}</td>
             <td>{{ $nin->specifiedDate }}</td>
+            <td><a href="{{ url('gosi/'.$nin->NIN) }}" target="_blank">Show</a></td>
         </tr>
         @endforeach
     </tbody>

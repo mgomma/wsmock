@@ -35,7 +35,7 @@ class GosiController extends Controller
     
     public function store(GosiRequest $request) {
       Gosi::create($request->all());
-      return redirect('/gosi/create');
+      return redirect('/gosi/');
     }
     
  

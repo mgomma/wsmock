@@ -11,6 +11,8 @@ use View;
 class EngagmentSummaryBeanListController extends Controller
 {
   public function index() {
+    $engagmentSummaryBeanList = EngagmentSummaryBeanList::all();
+    return view('EngagmentSummaryBeanList.index', compact('engagmentSummaryBeanList'));
   }
     
     public function create() {
@@ -20,7 +22,7 @@ class EngagmentSummaryBeanListController extends Controller
     
     public function store(EngagmentSummaryBeanListRequest $request ) {
       EngagmentSummaryBeanList::create($request->all());
-      return redirect('/engagmentSummaryBeanList/create');
+      return redirect('/engagmentSummaryBeanList/');
     }
 
   /**
