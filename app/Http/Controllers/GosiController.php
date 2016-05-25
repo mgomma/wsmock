@@ -46,24 +46,25 @@ class GosiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
-    { Log::info('fff  srewrew');
-      $item = Gosi::where('NIN', $id)->first();
+    {
+      $item = Gosi::find($id);
+      $item->engagmentSummaryBeanList;
 
-      $item = ['NIN' => $id,
-              'contributorFirstName' => 'test 123',
-              'contributorThirdName' => 'test 123',
-              'contributorLastName' => 'test 123',
-              'contributorSecondName' => 'test 123',
-              'nationalityCode' => 'test 123',
-              'newNINumber' => 'test 123',
-              'sex' => 1,
-              'socialInsuranceNumber' => 'test 123',
-              'specifiedDate' => 'test 123',
-              ];
       if(!$item){
         return 'Not found NIN';
+      }else{
+        $return = new \stdClass();
+        $engagmentSummaryBeanList = $item->engagmentSummaryBeanList;
+
+        unset($item->engagment_summary_bean_list);
+        unset($item->engagmentSummaryBeanList);
+
+        $return = $item;
+        $return->engagmentSummaryBeanList = ['SimplifiedEngagmentSummaryBeanList' => 
+        $engagmentSummaryBeanList];
+        
+        return $return;
       }
-      $this->soap('Gosi.xml', $item);
     }
  
     /**

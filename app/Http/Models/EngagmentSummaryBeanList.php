@@ -2,11 +2,15 @@
 
 namespace App\Http\Models;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Models\Gosi;
 
-class engagmentSummaryBeanList extends Model
+
+class EngagmentSummaryBeanList extends Model
 {
     protected $table = 'engagmentSummaryBeanList';
     public $timestamps = false;
+    
+    public $primaryKey = 'id';
     protected  $fillable = [
         'gosi_id',
         'engagementStatus',
@@ -21,4 +25,8 @@ class engagmentSummaryBeanList extends Model
         'wage',
         'wageStatus',
     ];
+    
+     public function gosi() {
+      return $this->belongsTo(Gosi::class, 'NIN');
+    }
 }

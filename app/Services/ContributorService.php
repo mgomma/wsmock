@@ -8,36 +8,22 @@
  */
 
 namespace App\Services;
-
+use App\Http\Models\Gosi;
+  
 class ContributorService
 {
 
     /**
      * @WebMethod
-     *@return  wrapper[] $contributor @className=App\Services\Contributor
+     *@return string $contributor @className=Contributor
+     * @param type array Description
+     * @link /test description
      */
-    public function GetContributorSummary() {
-
-        $contributors=[];
-
-        $contributor = new Contributor();
-        $contributor->id = 1;
-        $contributor->fname = "Mohamed";
-
-       $contributors[] = $contributor;
-        $contributor = new Contributor();
-        $contributor->id = 2;
-        $contributor->fname = "Mido";
-
-        $contributors[] = $contributor;
-
-        return $contributors;
+    public function GetContributorSummary($param = []) {
+        $item = new \stdClass();
+        $item->GetContributorSummaryResult = (object)Gosi::where('NIN', '2147483647')->first()->toArray();
+        return $item;
     }
-
-
-
-
-
 }
 
 class Contributor{
@@ -45,12 +31,9 @@ class Contributor{
 
     /**
      * @type string
+     * @link /test description
      */
-    public $fname;
-    /**
-     * @type int
-     */
-    public $id;
-
-
+    public $GetContributorSummaryResulttest;
+  
+    
 }
