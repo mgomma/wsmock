@@ -26,7 +26,7 @@ class GosiController extends Controller
   
   
   public function index() {
-    $gosi = Gosi::all();
+    $gosi = Gosi::paginate(10);
     return view('Gosi.index', compact('gosi'));
     }
     
