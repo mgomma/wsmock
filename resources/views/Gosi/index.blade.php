@@ -1,6 +1,6 @@
 @include('layout')
-<a href="/gosi/create" target="_blank" class="btn btn-block">Add GOSI</a>
-<a href="/engagmentSummaryBeanList/create" target="_blank" class="btn btn-block">Add Engagment Summary Bean List</a>
+<a href="/public/gosi/create" target="_blank" class="btn btn-block">Add GOSI</a>
+<a href="/public/engagmentSummaryBeanList/create" target="_blank" class="btn btn-block">Add Engagment Summary Bean List</a>
 <table class="table table-striped">
     <caption>GOSI</caption>
     <thead>
