@@ -4,6 +4,8 @@
 {!! Form::open( array('url'=>'gosi','method' => 'post','id' => 'create_form','class' => '')) !!}
   
 @include('Gosi.form')
+<?php $flag = true; ?>
+@include('EngagmentSummaryBeanList.form')
 
 <div class="col-md-12">
     <div class="col-md-3"></div>

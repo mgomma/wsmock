@@ -11,17 +11,20 @@
             </ul>
         </div>
 @endif
-    <!--NIN-->
+
+<!--NIN-->
     <div class="form-group is-empty col-md-4">
         <label class="control-label">NIN</label>
-        <input type="text" name="NIN" class="form-control width-lg"  value="">
+        <input type="text" name="NIN" class="form-control width-lg" 
+               value="@if(isset($item->NIN)) {{$item->NIN}} @endif">
         <span class="material-input"></span>
     </div>
 
     <!--contributorFirstName-->
     <div class="form-group is-empty col-md-4">
         <label class="control-label">contributorFirstName	</label>
-        <input type="text" name="contributorFirstName" class="form-control width-lg" value="">
+        <input type="text" name="contributorFirstName" class="form-control width-lg" 
+               value="@if(isset($item->NIN)) {{$item->contributorFirstName}} @endif">
         <span class="material-input"></span>
     </div>
 
@@ -29,7 +32,7 @@
     <div class="form-group is-empty col-md-4">
         <label class="control-label">contributorThirdName	</label>
         <input type="text" name="contributorThirdName" class="form-control width-lg"
-               value="">
+               value="@if(isset($item->NIN)) {{$item->contributorThirdName}} @endif">
         <span class="material-input"></span>
     </div>
 
@@ -37,7 +40,7 @@
     <div class="form-group is-empty col-md-4">
         <label class="control-label">contributorLastName	</label>
         <input type="text" name="contributorLastName" class="form-control width-lg"
-               value="">
+               value="@if(isset($item->NIN)) {{$item->contributorLastName}} @endif">
         <span class="material-input"></span>
     </div>
 
@@ -45,7 +48,7 @@
     <div class="form-group is-empty col-md-4">
         <label class="control-label">contributorSecondName	</label>
         <input type="text" name="contributorSecondName" class="form-control width-lg"
-               value="">
+               value="@if(isset($item->NIN)) {{$item->contributorSecondName}} @endif">
         <span class="material-input"></span>
     </div>
 
@@ -53,7 +56,7 @@
     <div class="form-group is-empty col-md-4">
         <label class="control-label">nationalityCode	</label>
         <input type="text" name="nationalityCode" class="form-control width-lg"
-               value="">
+               value="@if(isset($item->NIN)) {{$item->nationalityCode}} @endif">
         <span class="material-input"></span>
     </div>
 
@@ -61,7 +64,7 @@
     <div class="form-group is-empty col-md-4">
         <label class="control-label">newNINumber	</label>
         <input type="text" name="newNINumber" class="form-control width-lg"
-               value="">
+               value="@if(isset($item->NIN)) {{$item->newNINumber}} @endif">
         <span class="material-input"></span>
     </div>
 
@@ -69,8 +72,8 @@
     <div class="form-group is-empty col-md-4">
         <label class="control-label">sex	</label>
         <select name="sex">
-            <option value="0">Male</option>
-            <option value="1">Female</option>
+            <option value="0" @if(isset($item)&& $item->sex == 0) selected @endif>Male</option>
+            <option value="1" @if(isset($item) && $item->sex == 1) selected @endif>Female</option>
         </select>
         <span class="material-input"></span>
     </div>
@@ -78,14 +81,16 @@
     <!--socialInsuranceNumber-->
     <div class="form-group is-empty col-md-4">
         <label class="control-label">socialInsuranceNumber	</label>
-        <input type="text" name="socialInsuranceNumber" class="form-control width-lg"  value="">
+        <input type="text" name="socialInsuranceNumber" class="form-control width-lg"  
+               value="@if(isset($item->NIN)) {{$item->socialInsuranceNumber}} @endif">
         <span class="material-input"></span>
     </div>
 
     <!--specifiedDate-->
     <div class="form-group is-empty col-md-4">
         <label class="control-label">specifiedDate	</label>
-        <input type="text" name="specifiedDate" class="form-control width-lg" placeholder="2010-01-01"  value="">
+        <input type="text" name="specifiedDate" class="form-control width-lg" placeholder="2010-01-01" 
+               value="@if(isset($item->NIN)) {{$item->specifiedDate}} @endif">
         <span class="material-input"></span>
     </div>
     

@@ -5,6 +5,7 @@ use App\Http\Requests\GosiRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Models\Gosi;
+use App\Http\Models\EngagmentSummaryBeanList;
 use View;
 use Log;
 use DB;
@@ -75,7 +76,14 @@ class GosiController extends Controller
      */
     public function edit($id)
     {
-        //
+        $item = Gosi::find($id);
+        $item->engagmentSummaryBeanList;
+
+        if(!$item){
+        return 'Not found NIN';
+      }else{
+        return view('Gosi.edit', compact('item'));
+      }
     }
 
     /**
@@ -87,7 +95,44 @@ class GosiController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $engagmentSummaryBeanList = $request->input('engagmentSummaryBeanList');
+      $item = [
+          'NIN' => trim($request->input('NIN')),
+          'contributorFirstName' => trim($request->input('contributorFirstName')),
+          'contributorThirdName' => trim($request->input('contributorThirdName')),
+          'contributorLastName' => trim($request->input('contributorLastName')),
+          'contributorSecondName' => trim($request->input('contributorSecondName')),
+          'nationalityCode' => $request->input('nationalityCode'),
+          'newNINumber' => $request->input('newNINumber'),
+          'sex' => $request->input('sex'),
+          'socialInsuranceNumber' => $request->input('socialInsuranceNumber'),
+          'specifiedDate' => $request->input('specifiedDate'),
+          ];
+      
+      $gosi = Gosi::find($item['NIN']);
+      $gosi->update($item);
+//dd($engagmentSummaryBeanList);
+      foreach ($engagmentSummaryBeanList as $engagmentSummaryBeanListItem){
+        $engagmentSummaryBeanListItem['establishmentNameArb'] = trim($engagmentSummaryBeanListItem['establishmentNameArb']);
+        
+        if(isset($engagmentSummaryBeanListItem['delete']) && !empty($engagmentSummaryBeanListItem['id'])){
+          EngagmentSummaryBeanList::destroy(trim($engagmentSummaryBeanListItem['id']));
+          continue;
+        }
+        else if(empty($engagmentSummaryBeanListItem['id']) && !empty($engagmentSummaryBeanListItem['joiningDate'])){
+          $engagmentSummaryBeanListItem['gosi_id'] = $item['NIN'];
+
+          unset($engagmentSummaryBeanListItem['id']);
+          EngagmentSummaryBeanList::create($engagmentSummaryBeanListItem);
+        }else{
+              $eng = EngagmentSummaryBeanList::where('id' , $engagmentSummaryBeanListItem['id'])->first();
+              if($eng){
+                $eng->update($engagmentSummaryBeanListItem);  
+              }
+        }
+
+        }
+        return redirect('/gosi/edit/'.$item['NIN']);
     }
 
     /**
@@ -99,21 +144,6 @@ class GosiController extends Controller
     public function destroy($id)
     {
         //
-    }
-    
-    /**
-     * send xml response to simulate soap response
-     * @param type $param
-     */
-    public function soap($view_name, $item = []) {
-      $content = View::make($view_name, $item);
-         
-      $response = new Response();
-      $response->headers->set("Content-Type","text/xml; charset=utf-8");
-      
-      $response->setContent($content);
-      $response->send();
-      exit;
     }
 }
 

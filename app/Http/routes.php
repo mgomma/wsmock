@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::resource('gosi', 'GosiController');
 Route::resource('engagmentSummaryBeanList', 'EngagmentSummaryBeanListController');
-
+Route::get('gosi/edit/{id}', 'GosiController@edit');
 
 
 Route::resource('contributor','ContributorController');

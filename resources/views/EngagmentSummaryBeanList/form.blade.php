@@ -12,6 +12,7 @@
                 </ul>
             </div>
         @endif
+ @if(isset($gosi))       
 <div class="form-group is-empty col-md-4">
     <label class="control-label">NIN</label>
     <select name="gosi_id">
@@ -21,86 +22,100 @@
     </select>
     <span class="material-input"></span>
 </div>
+ @endif
 
+   <?php $key = isset($key) ? $key : 0; ?>
+ <div class="form-group is-empty col-md-4">
+    <label class="control-label">delete	</label>
+    <input type="checkbox" name="engagmentSummaryBeanList[{{$key}}][delete]" value="">
+</div>
+ <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)) {{$item->id}} @endif">
+ 
 <!--engagementStatus-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">engagementStatus	</label>
-    <input type="text" name="engagementStatus" class="form-control width-lg" value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][engagementStatus]" class="form-control width-lg"
+           value="@if(isset($item->engagementStatus)) {{$item->engagementStatus}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--establishmentNameArb-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">establishmentNameArb	</label>
-    <input type="text" name="establishmentNameArb" class="form-control width-lg"
-           value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][establishmentNameArb]" class="form-control width-lg"
+           value="@if(isset($item->establishmentNameArb)) {{$item->establishmentNameArb}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--joiningDate-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">joiningDate	</label>
-    <input type="text" name="joiningDate" class="form-control width-lg"
-           value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][joiningDate]" class="form-control width-lg"
+           value="@if(isset($item->joiningDate)) {{$item->joiningDate}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--joiningDateEntFmt-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">joiningDateEntFmt	</label>
-    <input type="text" name="joiningDateEntFmt" class="form-control width-lg"
-           value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][joiningDateEntFmt]" class="form-control width-lg"
+           value="@if(isset($item->joiningDateEntFmt)) {{$item->joiningDateEntFmt}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--leavingDate-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">leavingDate	</label>
-    <input type="text" name="leavingDate" class="form-control width-lg"
-           value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][leavingDate]" class="form-control width-lg"
+           value="@if(isset($item->leavingDate)) {{$item->leavingDate}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--leavingDateEntFmt-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">leavingDateEntFmt	</label>
-    <input type="text" name="leavingDateEntFmt" class="form-control width-lg"
-           value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][leavingDateEntFmt]" class="form-control width-lg"
+           value="@if(isset($item->leavingDateEntFmt)) {{$item->leavingDateEntFmt}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--molEstId-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">molEstId	</label>
-    <input type="text" name="molEstId" class="form-control width-lg"  value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][molEstId]" class="form-control width-lg" 
+           value="@if(isset($item->molEstId)) {{$item->molEstId}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--molEstOfficeId-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">molEstOfficeId	</label>
-    <input type="text" name="molEstOfficeId" class="form-control width-lg"  value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][molEstOfficeId]" class="form-control width-lg"
+           value="@if(isset($item->molEstOfficeId)) {{$item->molEstOfficeId}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--registrationNumber-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">registrationNumber	</label>
-    <input type="text" name="registrationNumber" class="form-control width-lg"  value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][registrationNumber]" class="form-control width-lg" 
+           value="@if(isset($item->registrationNumber)) {{$item->registrationNumber}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--wage-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">wage	</label>
-    <input type="text" name="wage" class="form-control width-lg"  value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][wage]" class="form-control width-lg" 
+           value="@if(isset($item->wage)) {{$item->wage}} @endif">
     <span class="material-input"></span>
 </div>
 
 <!--wageStatus-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">wageStatus	</label>
-    <input type="text" name="wageStatus" class="form-control width-lg"  value="">
+    <input type="text" name="engagmentSummaryBeanList[{{$key}}][wageStatus]" class="form-control width-lg" 
+           value="@if(isset($item->wageStatus)) {{$item->wageStatus}} @endif">
     <span class="material-input"></span>
 </div>
 </div>
