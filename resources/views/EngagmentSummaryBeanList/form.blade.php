@@ -15,11 +15,11 @@
  @if(isset($gosi))       
 <div class="form-group is-empty col-md-4">
     <label class="control-label">NIN</label>
-    <select name="gosi_id">
-        @foreach($gosi as $nin)
-            <option value="{{ $nin }}">{{ $nin }}</option>
-        @endforeach
-    </select>
+
+    <div class="form-group is-empty col-md-4">
+    {!! Form::select('gosi_id', $gosi , array('class' => 'form-control')) !!}
+    </div>
+
     <span class="material-input"></span>
 </div>
  @endif
