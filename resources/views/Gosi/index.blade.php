@@ -2,7 +2,7 @@
 <div class="col-md-1"></div>
 <div class="col-md-8">
     <h1>Welcome to my bookshop</h1>
-    <p><a href="{{ url('/public/gosi/create') }}">Create new</a></p>
+    <p><a href="{{ url('/gosi/create') }}">Create new</a></p>
     @section('content')
         @if ($gosi->count())
             <table class="table table-striped table-bordered">

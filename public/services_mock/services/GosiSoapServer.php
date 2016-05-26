@@ -60,11 +60,23 @@ class Address {
     public $address;
 }
 
+class GetContributorSummaryParam{
+  /**
+     * @type int
+     */
+  public $gosiInput;
+  
+    /**
+     * @type string
+     */
+  public $specifiedDate;
+}
+
 class GosiSoapServer
 {
     /**
      * @WebMethod
-     * @param array $param
+     * @param wrapper[] $param @className=GetContributorSummaryParam
      * @return wrapper $userReturn @className=Contributor
      */
     public function GetContributorSummary($param)
