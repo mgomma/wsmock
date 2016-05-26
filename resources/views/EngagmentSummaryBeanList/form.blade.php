@@ -29,13 +29,13 @@
     <label class="control-label">delete	</label>
     <input type="checkbox" name="engagmentSummaryBeanList[{{$key}}][delete]" value="">
 </div>
- <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)) {{$item->id}} @endif">
+ <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)){{$item->id}}@endif">
  
 <!--engagementStatus-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">engagementStatus	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][engagementStatus]" class="form-control width-lg"
-           value="@if(isset($item->engagementStatus)) {{$item->engagementStatus}} @endif">
+           value="@if(isset($item->engagementStatus)){{$item->engagementStatus}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -43,7 +43,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">establishmentNameArb	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][establishmentNameArb]" class="form-control width-lg"
-           value="@if(isset($item->establishmentNameArb)) {{$item->establishmentNameArb}} @endif">
+           value="@if(isset($item->establishmentNameArb)){{$item->establishmentNameArb}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -51,7 +51,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">joiningDate	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][joiningDate]" class="form-control width-lg"
-           value="@if(isset($item->joiningDate)) {{$item->joiningDate}} @endif">
+           value="@if(isset($item->joiningDate)){{$item->joiningDate}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -59,7 +59,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">joiningDateEntFmt	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][joiningDateEntFmt]" class="form-control width-lg"
-           value="@if(isset($item->joiningDateEntFmt)) {{$item->joiningDateEntFmt}} @endif">
+           value="@if(isset($item->joiningDateEntFmt)){{$item->joiningDateEntFmt}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -67,7 +67,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">leavingDate	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][leavingDate]" class="form-control width-lg"
-           value="@if(isset($item->leavingDate)) {{$item->leavingDate}} @endif">
+           value="@if(isset($item->leavingDate)){{$item->leavingDate}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -75,7 +75,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">leavingDateEntFmt	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][leavingDateEntFmt]" class="form-control width-lg"
-           value="@if(isset($item->leavingDateEntFmt)) {{$item->leavingDateEntFmt}} @endif">
+           value="@if(isset($item->leavingDateEntFmt)){{$item->leavingDateEntFmt}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -83,7 +83,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">molEstId	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][molEstId]" class="form-control width-lg" 
-           value="@if(isset($item->molEstId)) {{$item->molEstId}} @endif">
+           value="@if(isset($item->molEstId)){{$item->molEstId}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -91,7 +91,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">molEstOfficeId	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][molEstOfficeId]" class="form-control width-lg"
-           value="@if(isset($item->molEstOfficeId)) {{$item->molEstOfficeId}} @endif">
+           value="@if(isset($item->molEstOfficeId)){{$item->molEstOfficeId}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -99,7 +99,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">registrationNumber	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][registrationNumber]" class="form-control width-lg" 
-           value="@if(isset($item->registrationNumber)) {{$item->registrationNumber}} @endif">
+           value="@if(isset($item->registrationNumber)){{$item->registrationNumber}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -107,7 +107,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">wage	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][wage]" class="form-control width-lg" 
-           value="@if(isset($item->wage)) {{$item->wage}} @endif">
+           value="@if(isset($item->wage)){{$item->wage}}@endif">
     <span class="material-input"></span>
 </div>
 
@@ -115,7 +115,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">wageStatus	</label>
     <input type="text" name="engagmentSummaryBeanList[{{$key}}][wageStatus]" class="form-control width-lg" 
-           value="@if(isset($item->wageStatus)) {{$item->wageStatus}} @endif">
+           value="@if(isset($item->wageStatus)){{$item->wageStatus}}@endif">
     <span class="material-input"></span>
 </div>
 </div>

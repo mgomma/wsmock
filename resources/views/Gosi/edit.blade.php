@@ -1,7 +1,6 @@
 @extends('template')
 
 @section('content')
-  <h1>Edit Gosi</h1>
   <hr/>
   {!! Form::model($item,['method'=>'PATCH','action'=>['GosiController@update',  $item->NIN] , 'id' => 'create_form', 'class' => '']) !!}
 
@@ -22,6 +21,10 @@
   @include('EngagmentSummaryBeanList.form')
 
   <?php endforeach;?>
+
+  <div class="form-group">
+      {!! Form::submit('Submit', array('class' => 'btn btn-primary')) !!}
+  </div>
 
   {!! Form::close() !!}
 
