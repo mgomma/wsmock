@@ -51,6 +51,11 @@ class GosiController extends Controller
       $item = Gosi::find($id);
       $item->engagmentSummaryBeanList;
 
+      $item->contributorFirstName = base64_encode($item->contributorFirstName);
+      $item->contributorThirdName = base64_encode($item->contributorThirdName);
+      $item->contributorLastName = base64_encode($item->contributorLastName);
+      $item->contributorSecondName = base64_encode($item->contributorSecondName);
+      
       if(!$item){
         return 'Not found NIN';
       }else{
@@ -61,8 +66,12 @@ class GosiController extends Controller
         unset($item->engagmentSummaryBeanList);
 
         $return = $item;
-        $return->engagmentSummaryBeanList = ['SimplifiedEngagmentSummaryBeanList' => 
-        $engagmentSummaryBeanList];
+        
+        foreach ($engagmentSummaryBeanList as $value) {
+          $value['establishmentNameArb'] = base64_encode($value['establishmentNameArb']);
+        }
+        
+        $return->engagmentSummaryBeanList = ['SimplifiedEngagmentSummaryBeanList' => $engagmentSummaryBeanList];
         
         return $return;
       }
