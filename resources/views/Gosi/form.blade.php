@@ -1,5 +1,5 @@
 <div class="container">
-<div class="row col-sm-6">
+<div class="row col-sm-12">
     <h1>Create GOSI NIN with details</h1>
 
     @if (count($errors) > 0)
