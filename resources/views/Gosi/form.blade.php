@@ -28,6 +28,14 @@
         <span class="material-input"></span>
     </div>
 
+    <!--contributorSecondName-->
+    <div class="form-group is-empty col-md-4">
+        {!! Form::label('contributorSecondName', 'contributorSecondName:') !!}
+        <input type="text" name="contributorSecondName" class="form-control width-lg"
+               value="@if(isset($item->NIN)) {{$item->contributorSecondName}} @endif">
+        <span class="material-input"></span>
+    </div>
+        
     <!--contributorThirdName-->
     <div class="form-group is-empty col-md-4">
         {!! Form::label('contributorThirdName', 'contributorThirdName:') !!}
@@ -41,14 +49,6 @@
         {!! Form::label('contributorLastName', 'contributorLastName:') !!}
         <input type="text" name="contributorLastName" class="form-control width-lg"
                value="@if(isset($item->NIN)) {{$item->contributorLastName}} @endif">
-        <span class="material-input"></span>
-    </div>
-
-    <!--contributorSecondName-->
-    <div class="form-group is-empty col-md-4">
-        {!! Form::label('contributorSecondName', 'contributorSecondName:') !!}
-        <input type="text" name="contributorSecondName" class="form-control width-lg"
-               value="@if(isset($item->NIN)) {{$item->contributorSecondName}} @endif">
         <span class="material-input"></span>
     </div>
 
