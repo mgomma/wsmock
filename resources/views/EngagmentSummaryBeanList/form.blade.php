@@ -1,8 +1,8 @@
 <!--NIN-->
 <div class="container">
     <div class="row col-sm-12">
-        <h1>Create Engagment Summary Bean List for NIN selected</h1>
-
+        <h1>Job Details</h1>
+          <hr/>
         @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>

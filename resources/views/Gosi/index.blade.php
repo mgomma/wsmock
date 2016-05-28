@@ -1,19 +1,19 @@
 @extends('template')
 <div class="col-md-1"></div>
 <div class="col-md-8">
-    <h1>Welcome to my bookshop</h1>
-    <p><a href="{{ url('/gosi/create') }}">Create new</a></p>
+    <h1>Welcome to API GOSI Simulator</h1>
+    <p><a class="btn btn-primary" href="{{ url('/gosi/create') }}">Create new</a></p>
     @section('content')
         @if ($gosi->count())
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
-                    <th>NIN</th>
-                    <th>contributorFirstName</th>
-                    <th>nationalityCode</th>
-                    <th>sex</th>
-                    <th>socialInsuranceNumber</th>
-                    <th>specifiedDate</th>
+                    <th>National ID</th>
+                    <th>Name</th>
+                    <th>Nationality</th>
+                    <th>Gender</th>
+                    <th>Social Insurance No</th>
+                    <th>Specified Date</th>
                     <th colspan="3" align="center">Action</th>
                 </tr>
                 </thead>
@@ -24,9 +24,14 @@
                     <?php $i++; ?>
                     <tr>
                         <td>{{ $nin->NIN }}</td>
-                        <td>{{ $nin->contributorFirstName }}</td>
+                        <td>{{ $nin->contributorFirstName }} {{ $nin->contributorSecondName }} {{ $nin->contributorThirdName }} {{ $nin->contributorLastName }}</td>
                         <td>{{ $nin->nationalityCode }}</td>
-                        <td>{{ $nin->sex }}</td>
+                        <td>@if ($nin->sex == 1)
+                                Female
+                            @else
+                                Male
+                            @endif                          
+                        </td>
                         <td>{{ $nin->socialInsuranceNumber }}</td>
                         <td>{{ $nin->specifiedDate }}</td>
 
@@ -42,7 +47,7 @@
                 {!!$gosi->render()!!}
             </center>
         @else
-            There are no book in the book list
+            There are no results.
         @endif
 </div>
 <div class="col-md-2"></div>

@@ -1,11 +1,13 @@
 <?php
+ini_set('display_errors', 1);
 
-$base_url = 'http://webservices.dev/public/services_mock/services/GosiSoapServer.php';
+$base_url = 'http://10.60.14.11/wsmock/public/services_mock/services/GosiSoapServer.php';
 $base_url_wsdl = $base_url.'?wsdl';
     
 use WSDL\WSDLCreator;
 ini_set("soap.wsdl_cache_enabled","0");
-require_once '../vendor/autoload.php';
+
+require_once '/var/www/html/wsmock/public/services_mock/vendor/autoload.php';
 
 $wsdl = new WSDLCreator('GosiSoapServer', $base_url);
 $wsdl->setNamespace($base_url);
@@ -13,8 +15,7 @@ $wsdl->setNamespace($base_url);
 if (isset($_GET['wsdl'])) {
     $wsdl->renderWSDL();
     exit;
-}
-
+} 
 $wsdl->renderWSDLService();
 
 $server = new SoapServer($base_url_wsdl, array(
@@ -82,7 +83,7 @@ class GosiSoapServer
     public function GetContributorSummary($param)
     {  
       $contributor = new Contributor();
-      $data = file_get_contents('http://webservices.dev/public/gosi/'.$param[0]);
+      $data = file_get_contents('http://10.60.14.11/wsmock/public/gosi/'.$param[0]);
 
       $data = json_decode($data);
       

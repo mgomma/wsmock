@@ -1,7 +1,7 @@
 <div class="container">
 <div class="row col-sm-12">
     <h1>Create GOSI NIN with details</h1>
-
+    <hr/>
     @if (count($errors) > 0)
         <div class="alert alert-danger">
             <ul>
