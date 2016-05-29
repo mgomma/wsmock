@@ -13,7 +13,11 @@
 @endif
 
 <!--NIN-->
-    <div class="form-group col-md-4">
+    @if(isset($item))
+        <h3>National ID: {{ $item->NIN }}</h3>
+    @endif
+
+    <div class="form-group col-md-4 <?php echo (isset($item))?"hidden":""; ?>">
         {!! Form::label('NIN', 'NIN:') !!}
         <input type="text" name="NIN" class="form-control width-lg" 
                value="@if(isset($item->NIN)) {{$item->NIN}} @endif">
@@ -61,7 +65,7 @@
     </div>
 
     <!--newNINumber-->
-    <div class="form-group is-empty col-md-4">
+    <div class="form-group is-empty col-md-4 hidden">
         {!! Form::label('newNINumber', 'newNINumber:') !!}
         <input type="text" name="newNINumber" class="form-control width-lg"
                value="@if(isset($item->NIN)) {{$item->newNINumber}} @endif">

@@ -58,7 +58,10 @@ class GosiController extends Controller
     }
     
     public function store(GosiRequest $request) {
-      Gosi::create($request->all());
+        $input = $request->all();
+        $input['newNINumber'] = $input['NIN'];
+        
+      Gosi::create($input);
       return redirect('/gosi/');
     }
     
@@ -129,13 +132,11 @@ class GosiController extends Controller
     {
       $engagmentSummaryBeanList = $request->input('engagmentSummaryBeanList');
       $item = [
-          'NIN' => trim($request->input('NIN')),
           'contributorFirstName' => $request->input('contributorFirstName'),
           'contributorThirdName' => $request->input('contributorThirdName'),
           'contributorLastName' => $request->input('contributorLastName'),
           'contributorSecondName' => $request->input('contributorSecondName'),
           'nationalityCode' => $request->input('nationalityCode'),
-          'newNINumber' => $request->input('newNINumber'),
           'sex' => $request->input('sex'),
           'socialInsuranceNumber' => $request->input('socialInsuranceNumber'),
           'specifiedDate' => $request->input('specifiedDate'),
@@ -145,7 +146,7 @@ class GosiController extends Controller
         $item[$key] = trim($value);
       }
 
-      $gosi = Gosi::find($item['NIN']);
+      $gosi = Gosi::find($id);
       $gosi->update($item);
 
       foreach ($engagmentSummaryBeanList as $engagmentSummaryBeanListItem){
@@ -171,7 +172,7 @@ class GosiController extends Controller
         }
 
         }
-        return redirect('/gosi/edit/'.$item['NIN']);
+        return redirect('/gosi');
     }
 
     /**

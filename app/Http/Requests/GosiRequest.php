@@ -24,13 +24,13 @@ class GosiRequest extends Request
     public function rules()
     {
         return [
-            'NIN' => 'required|integer|unique:gosi,NIN',
+            'NIN' => 'sometimes|required|integer|unique:gosi,NIN',
             'contributorFirstName' => 'required',
             'contributorLastName' => 'required',
             'contributorSecondName' => 'required',
             'contributorThirdName' => 'required',
 //            'nationalityCode' => 'required|integer',
-            'newNINumber' => 'required|integer',
+//            'newNINumber' => 'required|integer',
 //            'sex' => 'required|integer',
             'socialInsuranceNumber' => 'required|integer',
             'specifiedDate' => 'required|date',
