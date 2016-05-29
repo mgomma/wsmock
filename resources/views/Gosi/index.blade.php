@@ -2,6 +2,8 @@
 <div class="col-md-1"></div>
 <div class="col-md-8">
     <h1>Welcome to API GOSI Simulator</h1>
+    <a  target="blank" href="services_mock/tests/test.php">Test Service</a>
+
     <p><a class="btn btn-primary" href="{{ url('/gosi/create') }}">Create new</a></p>
     @section('content')
 
@@ -20,7 +22,7 @@
                 </tr>
             </thead>
          </table>
-         
+
         @if ($gosi->count())
 
 
