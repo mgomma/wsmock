@@ -37,7 +37,7 @@
 <div class="form-group is-empty col-md-4">
     <label class="control-label">engagementStatus	</label>
     <select name="engagmentSummaryBeanList[{{$key}}][engagementStatus]" class="form-control">
-        @foreach([1=>1,2=>2,3=>'Active In GOSI',4=>4,5=>5,6=>'Not Active In GOSI'] as $k => $v)
+        @foreach([1=>1,2=>2,3=>'3 - Active In GOSI',4=>4,5=>5,6=>'6 - Not Active In GOSI'] as $k => $v)
             <option value="{{ $k }}" <?php echo ((isset($item->engagementStatus)) && $k == $item->engagementStatus)?"selected":""; ?>>{{ $v }}</option>
         @endforeach
     </select>
