@@ -159,7 +159,7 @@ class GosiController extends Controller
           continue;
         }
         else if(empty($engagmentSummaryBeanListItem['id']) && !empty($engagmentSummaryBeanListItem['joiningDate'])){
-          $engagmentSummaryBeanListItem['gosi_id'] = $item['NIN'];
+          $engagmentSummaryBeanListItem['gosi_id'] = $id;
 
           unset($engagmentSummaryBeanListItem['id']);
           EngagmentSummaryBeanList::create($engagmentSummaryBeanListItem);
