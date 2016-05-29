@@ -36,8 +36,14 @@
 <!--engagementStatus-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">engagementStatus	</label>
-    <input type="text" name="engagmentSummaryBeanList[{{$key}}][engagementStatus]" class="form-control width-lg"
-           value="@if(isset($item->engagementStatus)){{$item->engagementStatus}}@endif">
+    <select name="engagmentSummaryBeanList[{{$key}}][engagementStatus]" class="form-control">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">Active In GOSI</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">Not Active In GOSI</option>
+    </select>
     <span class="material-input"></span>
 </div>
 

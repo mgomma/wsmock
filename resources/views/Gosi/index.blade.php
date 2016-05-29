@@ -59,7 +59,7 @@
 
                         <td><a class="btn btn-primary" href="{{ url('gosi/'.$nin->NIN) }}">Read</a></td>
                         <td><a class="btn btn-warning" href="{{ url('gosi/edit/'.$nin->NIN) }}">Update</a></td>
-                        <td><a class="btn btn-danger" href="">Delete</a></td>
+                        <td class="hidden"><a class="btn btn-danger" href="">Delete</a></td>
                     </tr>
                 @endforeach
                 </tbody>

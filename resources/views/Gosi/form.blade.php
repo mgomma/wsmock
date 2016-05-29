@@ -53,7 +53,7 @@
     </div>
 
     <!--nationalityCode-->
-    <div class="form-group is-empty col-md-4">
+    <div class="form-group is-empty col-md-4 hidden">
         {!! Form::label('nationalityCode', 'nationalityCode:') !!}
         <input type="text" name="nationalityCode" class="form-control width-lg"
                value="@if(isset($item->NIN)) {{$item->nationalityCode}} @endif">
@@ -69,7 +69,7 @@
     </div>
 
     <!--sex-->
-    <div class="form-group is-empty col-md-4">
+    <div class="form-group is-empty col-md-4 hidden">
         {!! Form::label('sex', 'sex:') !!}
         {!! Form::select('sex', array('0' => 'Male', '1' => 'Female'),old('sex'), array('class' => 'form-control')) !!}
         <span class="material-input"></span>

@@ -29,9 +29,9 @@ class GosiRequest extends Request
             'contributorLastName' => 'required',
             'contributorSecondName' => 'required',
             'contributorThirdName' => 'required',
-            'nationalityCode' => 'required|integer',
+//            'nationalityCode' => 'required|integer',
             'newNINumber' => 'required|integer',
-            'sex' => 'required|integer',
+//            'sex' => 'required|integer',
             'socialInsuranceNumber' => 'required|integer',
             'specifiedDate' => 'required|date',
         ];
