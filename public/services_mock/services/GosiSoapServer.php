@@ -1,10 +1,10 @@
 <?php
 ini_set('display_errors', 1);
 ini_set("soap.wsdl_cache_enabled", 0);
-exit('test');
+
 $base_url = 'http://10.60.14.11/wsmock/public/services_mock/services/GosiSoapServer.php';
 $base_url_wsdl = $base_url.'?wsdl';
-    
+
 use WSDL\WSDLCreator;
 require_once '/var/www/html/wsmock/public/services_mock/vendor/autoload.php';
 
