@@ -46,8 +46,8 @@
                     <tr>
                         <td>{{ $nin->NIN }}</td>
                         <td>{{ $nin->contributorFirstName }} {{ $nin->contributorSecondName }} {{ $nin->contributorThirdName }} {{ $nin->contributorLastName }}</td>
-                        <td>{{ $nin->nationalityCode }}</td>
-                        <td>@if ($nin->sex == 1)
+                        <td class="hidden">{{ $nin->nationalityCode }}</td>
+                        <td class="hidden">@if ($nin->sex == 1)
                                 Female
                             @else
                                 Male
