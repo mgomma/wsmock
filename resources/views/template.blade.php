@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>BOOK CURD - @yield('title')</title>
+        <title>Gosi Service- @yield('title')</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
         <!-- Scripts -->

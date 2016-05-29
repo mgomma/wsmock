@@ -4,7 +4,26 @@
     <h1>Welcome to API GOSI Simulator</h1>
     <p><a class="btn btn-primary" href="{{ url('/gosi/create') }}">Create new</a></p>
     @section('content')
+
+         <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    {!! Form::model('',['method'=>'get','action'=>'GosiController@index', 'id' => 'gosi', 'class' => '']) !!}
+                        <th><input type="text" name="NIN" class="form-control width-lg" placeholder='National ID' value="<?php echo isset($_GET['NIN'])? $_GET['NIN']: '' ?>" > </th>
+                        <th><input type="text" name="Name" class="form-control width-lg" placeholder='Name' value="<?php echo isset($_GET['Name'])? $_GET['Name']: '' ?>" > </th>
+                        <th><input type="text" name="Nationality" class="form-control width-lg" placeholder='Nationality' value="<?php echo isset($_GET['Nationality'])? $_GET['Nationality']: '' ?>" > </th>
+                        <th><input type="text" name="Gender" class="form-control width-lg" placeholder='Gender' value="<?php echo isset($_GET['Gender'])? $_GET['Gender']: '' ?>" > </th>
+                        <th><input type="text" name="socialInsuranceNumber" class="form-control width-lg" placeholder='Social Insurance No' value="<?php echo isset($_GET['socialInsuranceNumber'])? $_GET['socialInsuranceNumber']: '' ?>" > </th>
+                        <th> <button type="submit" id="submit" value="submit"> submit </button> </th>
+                    {!! Form::close() !!}
+
+                </tr>
+            </thead>
+         </table>
+         
         @if ($gosi->count())
+
+
             <table class="table table-striped table-bordered">
                 <thead>
                 <tr>
@@ -51,4 +70,16 @@
         @endif
 </div>
 <div class="col-md-2"></div>
+<script type="text/javascript">
+$(document).ready(function() { 
+
+      $('#gosi input').keyup(function(e) {
+        if (e.keyCode == 13) {
+            $('#gosi').submit();
+        }
+    });
+ });
+</script>
+
 @stop
+

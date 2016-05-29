@@ -26,7 +26,30 @@ class GosiController extends Controller
   
   
   public function index() {
-    $gosi = Gosi::paginate(10);
+     $gosi = new Gosi;
+
+    if(request()->input('NIN')){
+          $gosi = $gosi->where('NIN','like', request()->input('NIN'));
+     }
+
+     if(request()->input('Name')){
+          $gosi = $gosi->where('contributorFirstName','like', request()->input('Name'));
+     }
+
+      if(request()->input('Nationality')){
+          $gosi = $gosi->where('nationalityCode','like', request()->input('Nationality'));
+     }
+
+     if(request()->input('Gender')){
+          $gosi = $gosi->where('sex','like', request()->input('Gender'));
+     }
+
+     if(request()->input('socialInsuranceNumber')){
+          $gosi = $gosi->where('socialInsuranceNumber','like', request()->input('socialInsuranceNumber'));
+     }
+
+
+    $gosi = $gosi->paginate(10);
     return view('Gosi.index', compact('gosi'));
     }
     
