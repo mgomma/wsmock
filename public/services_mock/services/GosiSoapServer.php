@@ -1,7 +1,8 @@
 <?php
 ini_set('display_errors', 1);
 
-$base_url = 'http://10.60.14.11/wsmock/public/services_mock/services/GosiSoapServer.php';
+//$base_url = 'http://10.60.14.11/wsmock/public/services_mock/services/GosiSoapServer.php';
+$base_url = 'http://webservices.dev/public/services_mock/services/GosiSoapServer.php';
 $base_url_wsdl = $base_url.'?wsdl';
     
 use WSDL\WSDLCreator;
@@ -84,7 +85,7 @@ class GosiSoapServer
     {  
       $contributor = new Contributor();
       $data = file_get_contents('http://10.60.14.11/wsmock/public/gosi/'.$param[0]);
-
+      
       $data = json_decode($data);
       
       $result = new stdClass();
@@ -96,7 +97,6 @@ class GosiSoapServer
       unset($data->engagmentSummaryBeanList);
 //      
       $result = $data;
-
       $val = new stdClass();
       $val->SimplifiedEngagmentSummaryBeanList = $engagmentSummaryBeanList;
 
