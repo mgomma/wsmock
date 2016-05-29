@@ -141,12 +141,17 @@ class GosiController extends Controller
           'specifiedDate' => $request->input('specifiedDate'),
           ];
       
-      array_filter($item, 'trim');
+      foreach ($item as $key => $value) {
+        $item[$key] = trim($value);
+      }
+
       $gosi = Gosi::find($item['NIN']);
       $gosi->update($item);
 
       foreach ($engagmentSummaryBeanList as $engagmentSummaryBeanListItem){
-        array_filter($engagmentSummaryBeanListItem, 'trim');
+        foreach ($engagmentSummaryBeanListItem as $key => $value) {
+          $engagmentSummaryBeanListItem[$key] = trim($value);
+        }
         
         if(isset($engagmentSummaryBeanListItem['delete']) && !empty($engagmentSummaryBeanListItem['id'])){
           EngagmentSummaryBeanList::destroy(trim($engagmentSummaryBeanListItem['id']));
