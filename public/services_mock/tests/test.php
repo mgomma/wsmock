@@ -7,21 +7,20 @@
  */
 ini_set("soap.wsdl_cache_enabled","0");
       
-//$base_url = 'http://10.10.4.1:1980/LiteGOSIService.svc?wsdl';
-if(isset($_GET['WSDL']) ){
-	$base_url = $_GET['WSDL'];
+if(isset($_POST['WSDL']) ){
+	$base_url = $_POST['WSDL'];
 }else{
 	$base_url = 'http://10.60.14.11/wsmock/public/services_mock/services/GosiSoapServer.php?wsdl';
 }
 
-if(isset($_GET['NIN'])){
-	$NIN = $_GET['NIN'];
+if(isset($_POST['NIN'])){
+	$NIN = $_POST['NIN'];
 }else{
-	$NIN = '';
+	$NIN = 0;
 }
 
-if(isset($_GET['specifiedDate'])){
-	$specifiedDate = $_GET['specifiedDate'];
+if(isset($_POST['specifiedDate'])){
+	$specifiedDate = $_POST['specifiedDate'];
 }else{
 	$specifiedDate = '2009-09-01';
 }
@@ -31,7 +30,7 @@ if(isset($_GET['specifiedDate'])){
 ?>
 
 <div>
-	<form class="" id="gosi" accept-charset="UTF-8" action="" method="GET">
+	<form class="" id="gosi" accept-charset="UTF-8" action="" method="POST">
 
 
 	<input type="text" value="<?php echo $NIN; ?>" placeholder="NIN"  name="NIN" size='50' />
@@ -44,8 +43,10 @@ if(isset($_GET['specifiedDate'])){
 </div>
 
 <?php
+if($NIN > 0){
 
-$options = array('trace' => 1,'cache_wsdl' => WSDL_CACHE_NONE,'exceptions' => true);
+  
+  $options = array('trace' => 1,'cache_wsdl' => WSDL_CACHE_NONE,'exceptions' => true);
 $client = new SoapClient($base_url, $options);
 $param = array("gosiInput" => $NIN , "specifiedDate" => $specifiedDate);
 
@@ -53,4 +54,5 @@ $result = $client->GetContributorSummary($param);
 
 echo '<pre>';
 print_r($result); 
+}
 ?>
