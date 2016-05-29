@@ -16,7 +16,6 @@ if (isset($_GET['wsdl'])) {
     exit;
 } 
 $wsdl->renderWSDLService();
-echo '<pre>'; print_r('tet'); exit;
 $server = new SoapServer($base_url_wsdl, array(
     'uri' => $base_url,
 	'location' => $wsdl->getLocation(),
