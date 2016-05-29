@@ -13,8 +13,8 @@
                     {!! Form::model('',['method'=>'get','action'=>'GosiController@index', 'id' => 'gosi', 'class' => '']) !!}
                         <th><input type="text" name="NIN" class="form-control width-lg" placeholder='National ID' value="<?php echo isset($_GET['NIN'])? $_GET['NIN']: '' ?>" > </th>
                         <th><input type="text" name="Name" class="form-control width-lg" placeholder='Name' value="<?php echo isset($_GET['Name'])? $_GET['Name']: '' ?>" > </th>
-                        <th><input type="text" name="Nationality" class="form-control width-lg" placeholder='Nationality' value="<?php echo isset($_GET['Nationality'])? $_GET['Nationality']: '' ?>" > </th>
-                        <th><input type="text" name="Gender" class="form-control width-lg" placeholder='Gender' value="<?php echo isset($_GET['Gender'])? $_GET['Gender']: '' ?>" > </th>
+                        <th class="hidden"><input type="text" name="Nationality" class="form-control width-lg" placeholder='Nationality' value="<?php echo isset($_GET['Nationality'])? $_GET['Nationality']: '' ?>" > </th>
+                        <th class="hidden"><input type="text" name="Gender" class="form-control width-lg" placeholder='Gender' value="<?php echo isset($_GET['Gender'])? $_GET['Gender']: '' ?>" > </th>
                         <th><input type="text" name="socialInsuranceNumber" class="form-control width-lg" placeholder='Social Insurance No' value="<?php echo isset($_GET['socialInsuranceNumber'])? $_GET['socialInsuranceNumber']: '' ?>" > </th>
                         <th> <button type="submit" id="submit" value="submit"> submit </button> </th>
                     {!! Form::close() !!}
@@ -31,8 +31,8 @@
                 <tr>
                     <th>National ID</th>
                     <th>Name</th>
-                    <th>Nationality</th>
-                    <th>Gender</th>
+                    <th class="hidden">Nationality</th>
+                    <th class="hidden">Gender</th>
                     <th>Social Insurance No</th>
                     <th>Specified Date</th>
                     <th colspan="3" align="center">Action</th>
