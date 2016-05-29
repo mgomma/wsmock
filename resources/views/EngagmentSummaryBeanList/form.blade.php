@@ -13,7 +13,7 @@
             </div>
         @endif
  @if(isset($gosi))       
-<div class="form-group is-empty col-md-4">
+<div class="form-group is-empty col-md-4 hidden">
     <label class="control-label">NIN</label>
 
     <div class="form-group is-empty col-md-4">
@@ -24,13 +24,15 @@
 </div>
  @endif
 
-   <?php $key = isset($key) ? $key : 0; ?>
+<?php $key = isset($key) ? $key : 0; if(isset($item) && isset($item->id)): ?>
+
  <div class="form-group is-empty col-md-4">
     <label class="control-label">delete	</label>
     <input type="checkbox" name="engagmentSummaryBeanList[{{$key}}][delete]" value="">
 </div>
- <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)){{$item->id}}@endif">
  
+ <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)){{$item->id}}@endif">
+ <?php endif; ?>
 <!--engagementStatus-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">engagementStatus	</label>
