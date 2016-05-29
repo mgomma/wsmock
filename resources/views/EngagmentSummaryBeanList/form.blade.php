@@ -30,9 +30,9 @@
     <label class="control-label">delete	</label>
     <input type="checkbox" name="engagmentSummaryBeanList[{{$key}}][delete]" value="">
 </div>
- 
- <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)){{$item->id}}@endif">
  <?php endif; ?>
+
+ <input type="hidden" name="engagmentSummaryBeanList[{{$key}}][id]" value="@if(isset($item->id)){{$item->id}}@endif">
 <!--engagementStatus-->
 <div class="form-group is-empty col-md-4">
     <label class="control-label">engagementStatus	</label>

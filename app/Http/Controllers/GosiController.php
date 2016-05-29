@@ -130,10 +130,10 @@ class GosiController extends Controller
       $engagmentSummaryBeanList = $request->input('engagmentSummaryBeanList');
       $item = [
           'NIN' => trim($request->input('NIN')),
-          'contributorFirstName' => trim($request->input('contributorFirstName')),
-          'contributorThirdName' => trim($request->input('contributorThirdName')),
-          'contributorLastName' => trim($request->input('contributorLastName')),
-          'contributorSecondName' => trim($request->input('contributorSecondName')),
+          'contributorFirstName' => $request->input('contributorFirstName'),
+          'contributorThirdName' => $request->input('contributorThirdName'),
+          'contributorLastName' => $request->input('contributorLastName'),
+          'contributorSecondName' => $request->input('contributorSecondName'),
           'nationalityCode' => $request->input('nationalityCode'),
           'newNINumber' => $request->input('newNINumber'),
           'sex' => $request->input('sex'),
@@ -141,11 +141,17 @@ class GosiController extends Controller
           'specifiedDate' => $request->input('specifiedDate'),
           ];
       
+      foreach ($item as $key => $value) {
+        $item[$key] = trim($value);
+      }
+
       $gosi = Gosi::find($item['NIN']);
       $gosi->update($item);
-//dd($engagmentSummaryBeanList);
+
       foreach ($engagmentSummaryBeanList as $engagmentSummaryBeanListItem){
-        $engagmentSummaryBeanListItem['establishmentNameArb'] = trim($engagmentSummaryBeanListItem['establishmentNameArb']);
+        foreach ($engagmentSummaryBeanListItem as $key => $value) {
+          $engagmentSummaryBeanListItem[$key] = trim($value);
+        }
         
         if(isset($engagmentSummaryBeanListItem['delete']) && !empty($engagmentSummaryBeanListItem['id'])){
           EngagmentSummaryBeanList::destroy(trim($engagmentSummaryBeanListItem['id']));
@@ -157,6 +163,7 @@ class GosiController extends Controller
           unset($engagmentSummaryBeanListItem['id']);
           EngagmentSummaryBeanList::create($engagmentSummaryBeanListItem);
         }else{
+          
               $eng = EngagmentSummaryBeanList::where('id' , $engagmentSummaryBeanListItem['id'])->first();
               if($eng){
                 $eng->update($engagmentSummaryBeanListItem);  
