@@ -31,6 +31,10 @@
     "autoload-dev": {
         "classmap": [
             "tests/TestCase.php"
+        ],
+        "files": [
+            "app/WebServiceSOAP/nusoap.php",
+            "app/gosi.php"
         ]
     },
     "scripts": {

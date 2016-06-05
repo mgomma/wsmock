@@ -26,5 +26,5 @@ Route::post('app/services/contributorservice','ContributorController@testme');
 
 Route::get('testSoapClient','ContributorController@testSoapClient');
 
-
+Route::any('gosi_soap', 'SOAPController@serve');
 
