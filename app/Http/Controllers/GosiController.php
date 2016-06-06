@@ -172,7 +172,7 @@ class GosiController extends Controller
         }
 
         }
-        return redirect('/gosi');
+        return redirect('/gosi/edit/'.$id);
     }
 
     /**
